@@ -1,5 +1,5 @@
 export function getCustomProperty(elem, prop) {
-  return  parseFloat(getComputeStyle(elem).getPropertyValue(prop)) || 0
+  return parseFloat(getComputedStyle(elem).getPropertyValue(prop)) || 0
 }
 
 export function setCustomProperty(elem, prop, value) {
@@ -7,5 +7,5 @@ export function setCustomProperty(elem, prop, value) {
 }
 
 export function incrementCustomProperty(elem, prop, inc) {
-  setCustomProperty(elem, prop, getComputedStyle(elem, prop) + inc)
+  setCustomProperty(elem, prop, getCustomProperty(elem, prop) + inc)
 }
